@@ -1,0 +1,1 @@
+https://polarisxu.studygolang.com/posts/go/action/chained-channel-operations-in-a-single-select-case/
