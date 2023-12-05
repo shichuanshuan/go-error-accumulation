@@ -5,21 +5,33 @@ import (
 	"net"
 )
 
-func main() {
-	// ´´½¨Ò»¸ö net.Addr ÀàĞÍµÄ±äÁ¿²¢¸³ÖµÎª UDPAddr ÀàĞÍµÄÖµ
+func main1() {
+	// åˆ›å»ºä¸€ä¸ª net.Addr ç±»å‹çš„å˜é‡å¹¶èµ‹å€¼ä¸º UDPAddr ç±»å‹çš„å€¼
 	var addr net.Addr = &net.UDPAddr{
 		IP:   net.ParseIP("127.0.0.1"),
 		Port: 8080,
 	}
 
-	// ÔÚ½øĞĞÀàĞÍ¶ÏÑÔÖ®Ç°£¬×îºÃÊ¹ÓÃÀàĞÍ¶ÏÑÔµÄĞÎÊ½ value, ok := expression.(Type) À´½øĞĞ°²È«µÄÀàĞÍ¼ì²é¡£
-	// ½« addr ¶ÏÑÔÎª UDPAddr ÀàĞÍ£¬²¢½øĞĞÀàĞÍ¼ì²é
+	// åœ¨è¿›è¡Œç±»å‹æ–­è¨€ä¹‹å‰ï¼Œæœ€å¥½ä½¿ç”¨ç±»å‹æ–­è¨€çš„å½¢å¼ value, ok := expression.(Type) æ¥è¿›è¡Œå®‰å…¨çš„ç±»å‹æ£€æŸ¥ã€‚
+	// å°† addr æ–­è¨€ä¸º UDPAddr ç±»å‹ï¼Œå¹¶è¿›è¡Œç±»å‹æ£€æŸ¥
 	if udpAddr, ok := addr.(*net.UDPAddr); ok {
-		// ÀàĞÍ¶ÏÑÔ³É¹¦£¬»ñµÃÁËÒ»¸ö net.UDPAddr ÀàĞÍµÄÖµ
+		// ç±»å‹æ–­è¨€æˆåŠŸï¼Œè·å¾—äº†ä¸€ä¸ª net.UDPAddr ç±»å‹çš„å€¼
 		fmt.Println("IP:", udpAddr.IP)
 		fmt.Println("Port:", udpAddr.Port)
+		fmt.Println(udpAddr.AddrPort())
 	} else {
-		// ÀàĞÍ¶ÏÑÔÊ§°Ü
-		fmt.Println("addr ²»ÊÇ net.UDPAddr ÀàĞÍ")
+		// ç±»å‹æ–­è¨€å¤±è´¥
+		fmt.Println("addr ä¸æ˜¯ net.UDPAddr ç±»å‹")
+	}
+}
+
+func main() {
+	var addr net.Addr = &net.UDPAddr{
+		IP:   net.ParseIP("127.0.0.1"),
+		Port: 2323,
+	}
+
+	if udpAddr, ok := addr.(*net.UDPAddr); ok {
+		fmt.Println(udpAddr.IP)
 	}
 }

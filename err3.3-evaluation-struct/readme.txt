@@ -1,4 +1,4 @@
-【】
+[描述]
 来自 exec.Command
 
 sysattr := &syscall.ProcAttr{
