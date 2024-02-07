@@ -1,11 +1,8 @@
 [答案]
-map[string]Student 的 value 是一个 Student 结构值，所以当list["student"] = student,是一个值拷贝过程。而list["student"]则是一个值引用。那么值引用的特点是只读。所以对list["student"].Name = "LDB"的修改是不允许的。
+map[string]Student 的 value 是一个 Student 结构值，所以当list["student"] = student,是一个值拷贝过程。
+而list["student"]则是一个值引用。那么值引用的特点是只读。所以对list["student"].Name = "LDB"的修改是不允许的。
 
 方法一：
-
-package main
-
-import "fmt"
 
 type Student struct {
 	Name string
@@ -31,8 +28,6 @@ func main() {
 
 	fmt.Println(list["student"])
 }
-其中
-
 /**
 方法1:
 */
@@ -42,10 +37,6 @@ list["student"] = tmpStudent
 是先做一次值拷贝，做出一个tmpStudent副本,然后修改该副本，然后再次发生一次值拷贝复制回去，list["student"] = tmpStudent,但是这种会在整体过程中发生 2 次结构体值拷贝，性能很差。
 
 方法二：
-
-package main
-
-import "fmt"
 
 type Student struct {
 	Name string
