@@ -1,11 +1,8 @@
 package main
 
 import (
-	"context"
 	"fmt"
 	"net"
-	"os"
-	"time"
 )
 
 func main() {

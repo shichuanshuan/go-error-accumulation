@@ -6,12 +6,13 @@ import (
 )
 
 func main() {
-	// 目标地址
+	// 本地地址
 	local := &net.UDPAddr{
 		IP:   net.ParseIP("192.168.50.38"),
-		Port: 8888,
+		Port: 8888, // 若不填写，则随机生成端口号
 	}
 
+	// 目标地址
 	address := &net.UDPAddr{
 		IP:   net.ParseIP("192.168.50.38"),
 		Port: 7777,

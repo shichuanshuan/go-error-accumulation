@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/go-error-accumulation.iml" filepath="$PROJECT_DIR$/.idea/go-error-accumulation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/udp-server.iml" filepath="$PROJECT_DIR$/.idea/udp-server.iml" />
     </modules>
   </component>
 </project>
