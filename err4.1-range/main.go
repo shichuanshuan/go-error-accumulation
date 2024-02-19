@@ -8,7 +8,7 @@ type Foo struct {
 	bar string
 }
 
-func main1() {
+func main() {
 	s1 := []Foo{
 		{"A"},
 		{"B"},
@@ -16,7 +16,7 @@ func main1() {
 	}
 	s2 := make([]*Foo, len(s1))
 	for i, value := range s1 {
-		fmt.Printf("i[%v] value[%v] valuePtr[%p]\n", i, value, &value)
+		fmt.Printf("i[%v] iPtr[%v] value[%v] valuePtr[%p]\n", i, &i, value, &value)
 		s2[i] = &value
 	}
 	fmt.Println(s1[0], s1[1], s1[2])
